@@ -22,16 +22,16 @@ loremForm.addEventListener("submit", function (e) {
     articleContainer.innerHTML = `<p class="result">${
       text[randomParagraph()]
     }</p>`;
-    function randomParagraph() {
-      return Math.floor(Math.random() * text.length);
-    }
   } else {
     let tempText = text.slice(0, value);
     tempText = tempText
       .map(function (item) {
         return `<p class="result">${item}</p>`;
       })
-      .join();
+      .join("");
     articleContainer.innerHTML = tempText;
   }
 });
+function randomParagraph() {
+  return Math.floor(Math.random() * text.length);
+}
